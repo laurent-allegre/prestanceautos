@@ -57,9 +57,15 @@
     margin-top: 8px;
   }
 
-  .sticky-element h2, h3{
+  .sticky-element h2{
     color: brown;
     font-size: 48px;
+    font-weight: 800;
+  }
+
+  .sticky-element h3{
+    color: brown;
+    font-size: 44px;
     font-weight: 800;
   }
 
@@ -109,6 +115,18 @@
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; 
     margin-top: 1rem;
     margin-bottom: 1.2rem; 
+}
+
+/*-- CSS PAGE ANNONCE  --*/
+.tarif{
+  color: rgb(124, 34, 34);
+}
+.tarif h3{
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 40px;
+}
+.tarif h4{
+  font-size: 30px;
 }
 
 
