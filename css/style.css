@@ -1,0 +1,150 @@
+.navbar-brand {
+  font-size: 28px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: brown !important;
+}
+
+.nav-link {
+  color: brown !important;
+  font-size: 24px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.tm-container {
+  background-color: white;
+  max-width: 1400px;
+}
+
+.tm-site-title {
+  color: brown;
+  font-size: 3rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.tm-site-subtitle {
+  color: #0083bf;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.tm-section-1 {
+  height: 750px;
+  background-image: url(../images/fordGt.jpg);
+  background-size: cover;
+  -webkit-clip-path: polygon(0px 0px, 100% 0px, 100% 84%, 0px 100%);
+  clip-path: polygon(0px 0px, 100% 0px, 100% 84%, 0px 100%);
+  /* background-position: center -95px; */
+  background-repeat: no-repeat;
+  padding-top: 75px;
+}
+
+.tm-bg-circle-white {
+    background-color: white;
+    color: #6c6c6c;
+    padding: 75px 81px 75px 90px;
+    border-radius: 50%;
+    width: 550px;
+    height: 550px;
+  }
+
+  .tm-bg-circle-pad-2 {
+    padding-left: 120px;
+  }
+
+  .tm-section-icon {
+    color:brown;
+    margin-top: 8px;
+  }
+
+  .sticky-element h2, h3{
+    color: brown;
+    font-size: 48px;
+    font-weight: 800;
+  }
+
+  .card-title{
+    color: brown !important;
+    font-size: 24px;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    text-align: center;  
+  }
+  .card{
+      background-color: #e4e1e1;
+      border: none;
+      border-radius: 0;
+  }
+  .card-text{
+      text-align: center;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  .block{
+      display: inline;
+  }
+
+  .about-card {
+    border: 1px solid #F1F1F1;
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px 0px rgb(0 0 0 / 5%);
+    padding: 30px 20px;
+    margin-bottom: 50px;
+    flex: 1;
+}
+ 
+.about-card p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #4e4e4e;
+}
+ 
+.about-card img {
+    height: auto;
+    width: auto;
+}
+
+.text-heading{
+    color: brown !important;
+    font-size: 24px;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; 
+    margin-top: 1rem;
+    margin-bottom: 1.2rem; 
+}
+
+
+
+
+
+
+
+@media (max-width: 576px) {
+    .tm-bg-circle-white {
+      border-radius: 100px;
+      width: 100%;
+      height: auto;
+      padding: 50px;
+    }
+  
+    img {
+      max-width: 100%;
+    }
+  
+    .tm-section-1 {
+      height: auto;
+    }
+  
+    .tm-section-1 {
+      padding-bottom: 90px;
+      -webkit-clip-path: polygon(0px 0px, 100% 0px, 100% 92%, 0px 100%);
+      clip-path: polygon(0px 0px, 100% 0px, 100% 92%, 0px 100%);
+    }
+  
+    
+  
+    .tm-circle-img-container {
+      margin-bottom: 30px;
+    }
+  }
+  
+  
+  
