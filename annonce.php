@@ -1,3 +1,31 @@
+<?php
+
+include_once __DIR__ . "/admins/inc/database.php";
+
+try{
+    $db = new pdo("mysql: host=" . Database::HOST . "; port=" . Database::PORT . "; dbname=" . Database::DBNAME . "; charset=utf8;",Database::DBUSER, Database::DBPASS , array(
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+    ));
+}catch(PDOException $pe){
+    echo $pe->getMessage();
+}
+
+/**
+ * Appel du cours
+ */
+if (isset($_GET["id"]) && !empty($_GET["id"]))
+{
+    $req = "SELECT * FROM vehicules WHERE id = " . $_GET["id"];
+    $stmt = $db->prepare($req);
+    $stmt = $db->query($req);
+    $vehicules = $stmt->fetch(PDO::FETCH_ASSOC);
+
+}  else {
+    Header('Location: index.php');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -13,17 +41,17 @@
     <body>
       <nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top">
         <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">Prestance Autos</a>
+          <a class="navbar-brand" href="index.php">Prestance Autos</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link me-3" href="index.html">Accueil</a>
+                <a class="nav-link me-3" href="index.php">Accueil</a>
               </li>
               <li class="nav-item">
-                <a class="" href="index.html">
+                <a class="" href="index.php">
                   <img src="images/logoprestance.png" alt="Logo prestance autos" width="150" height="75">
                 </a>
               </li>
@@ -39,9 +67,9 @@
           <div class="container-fluid mt-5">
               <div class="row">
                   <div class="col-xl-4 col-md-10 col-sm-12 offset-xl-1 left tarif">
-                    <h3>BMW M5 V8 Bi turbo 560 Ch</h3>
-                    <h4 class="">54900 € TTC</h4>
-                        <img src="images/bmw-m5_33.jpg" alt="" class="img-fluid">
+                    <h3><?=$vehicules['title']; ?></h3>
+                    <h4 class=""><?= $vehicules['prix']; ?> € TTC</h4>
+                        <img src="images/<?= $vehicules['images'] ?>" alt="" class="img-fluid">
                   </div>
                   <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 right">
                     <table class="table">
@@ -62,49 +90,49 @@
                                 <th scope="row">Marque</th>
                                 <td></td>
                                 <td></td>
-                                <td>BMW</td>
+                                <td><?= $vehicules['marque']; ?></td>
                               </tr>
                               <tr>
                                 <th scope="row">Modèle</th>
                                 <td></td>
                                 <td></td>
-                                <td>M5</td>
+                                <td><?= $vehicules['modele']; ?></td>
                               </tr>
                               <tr>
                                 <th scope="row">Boite de vitesse</th>
                                 <td></td>
                                 <td></td>
-                                <td>Automatique</td>
+                                <td><?= $vehicules['btv']; ?></td>
                               </tr>
                               <tr>
                                 <th scope="row">Kilométrage</th>
                                 <td></td>
                                 <td></td>
-                                <td>49800 km</td>
+                                <td><?= $vehicules['kilometre']; ?> Km</td>
                               </tr>
                               <tr>
                                 <th scope="row">Date de mise en Circulation</th>
                                 <td></td>
                                 <td></td>
-                                <td>15/08/2012</td>
+                                <td><?= $vehicules['datemisecirculation']; ?></td>
                               </tr>
                               <tr>
                                 <th scope="row">Cylindrée</th>
                                 <td></td>
                                 <td></td>
-                                <td>4395 cm</td>
+                                <td><?= $vehicules['cylindree']; ?> cm</td>
                               </tr>
                               <tr>
                                 <th scope="row">Nombre de cylindres</th>
                                 <td></td>
                                 <td></td>
-                                <td>8</td>
+                                <td><?= $vehicules['nbcylindre']; ?></td>
                               </tr>
                               <tr>
                                 <th scope="row">Puissance fiscale</th>
                                 <td></td>
                                 <td></td>
-                                <td>47 cv</td>
+                                <td><?= $vehicules['pfiscale']; ?> cv</td>
                               </tr>
                             </tbody>
                           </table>
@@ -117,49 +145,55 @@
                                 <th scope="row">Puissance DIN</th>
                                 <td></td>
                                 <td></td>
-                                <td>560 Ch</td>
+                                <td><?= $vehicules['pdin']; ?> Ch</td>
                               </tr>
                               <tr>
                                 <th scope="row">Taux d'émission Co2</th>
                                 <td></td>
                                 <td></td>
-                                <td>232g/km</td>
+                                <td><?= $vehicules['temission']; ?>g/km</td>
                               </tr>
                               <tr>
                                 <th scope="row">Couleur extérieur</th>
                                 <td></td>
                                 <td></td>
-                                <td>Azurit noir métalisé</td>
+                                <td><?= $vehicules['cexterieur']; ?></td>
                               </tr>
                               <tr>
                                 <th scope="row">Couleur intérieur</th>
                                 <td></td>
                                 <td></td>
-                                <td>Noir</td>
+                                <td><?= $vehicules['cinterieur']; ?></td>
                               </tr>
                               <tr>
                                 <th scope="row">Nombre de sièges</th>
                                 <td></td>
                                 <td></td>
-                                <td>5</td>
+                                <td><?= $vehicules['nsieges']; ?></td>
                               </tr>
                               <tr>
                                 <th scope="row">Nombre de portes</th>
                                 <td></td>
                                 <td></td>
-                                <td>4</td>
+                                <td><?= $vehicules['nportes']; ?></td>
                               </tr>
                               <tr>
                                 <th scope="row">Transmission</th>
                                 <td></td>
                                 <td></td>
-                                <td>Propulsion</td>
+                                <td><?= $vehicules['transmission']; ?></td>
                               </tr>
                               <tr>
-                                <th scope="row">Carrosserie</th>
+                                <th scope="row">Carosserie</th>
                                 <td></td>
                                 <td></td>
-                                <td>berline</td>
+                                <td><?= $vehicules['carosserie']; ?></td>
+                              </tr>
+                              <tr>
+                                <th scope="row">Energie</th>
+                                <td></td>
+                                <td></td>
+                                <td><?= $vehicules['energie']; ?></td>
                               </tr>
                             </tbody>
                           </table>
