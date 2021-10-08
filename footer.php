@@ -2,7 +2,7 @@
 <!-- FOOTER -->
 <div class="container-fluid my-5">
 
-   <footer class="text-white text-center text-lg-start bg-dark">
+   <footer class="text-white text-center text-lg-start bg-dark ">
      <!-- Grid container -->
      <div class="container p-4">
        <!--Grid row-->
