@@ -17,10 +17,7 @@
     $id = checkInput($_GET['id']);  
     }
 
-    $statement = $db->prepare('SELECT vehicules.title, vehicules.prix, vehicules.images, vehicules.marque, vehicules.modele, vehicules.btv,
-        vehicules.kilometre, vehicules.datemisecirculation, vehicules.cylindree, vehicules.nbcylindre, vehicules.pfiscale, vehicules.pdin,
-        vehicules.temission, vehicules.cexterieur, vehicules.cinterieur, vehicules.nsieges, vehicules.nportes, vehicules.transmission,
-        vehicules.carosserie, vehicules.energie FROM vehicules  WHERE vehicules.id = ?');
+    $statement = $db->prepare('SELECT * FROM vehicules  WHERE vehicules.id = ?');
     $statement->execute(array($id));   
     $item = $statement->fetch();
                            
@@ -47,7 +44,7 @@ function checkInput($data)
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
   <link rel="stylesheet" href="../css/style.css">
-  <title>Prestance Autos annonces</title>
+  <title>Prestance Autos Liste des annonces</title>
   </head>
     <body>
     <nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top">

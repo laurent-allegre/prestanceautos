@@ -33,7 +33,7 @@ try{
           <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link me-3" href="index.php">Accueil</a>
+                <a class="nav-link me-3" href="../index.php">Accueil</a>
               </li>
               <li class="nav-item">
                 <a class="" href="#">
@@ -41,7 +41,7 @@ try{
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link ms-2" href="index.php#about">Nos voitures</a>
+                <a class="nav-link ms-2" href="../index.php#about">Nos voitures</a>
               </li>  
             </ul>
           </div>
