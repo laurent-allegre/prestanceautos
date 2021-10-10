@@ -73,6 +73,7 @@ $vehicules = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </button>
       </div>
     <!--FIN-----CAROUSSEL-->
+    
     <!--SECTION---ABOUT-->
     <div class=" mx-auto mt-5">
       <section class="tm-section tm-section-1">
@@ -95,7 +96,7 @@ $vehicules = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </div>  
     <!--FIN--SECTION---ABOUT-->
     <div class="container mb-4">
-      <div class="row justify-content-center services">
+      <div class="row justify-content-center">
 
         <div class="card" style="width: 22rem;">
           <i class="far fa-4x fa-handshake mx-auto tm-section-icon"></i>
@@ -126,7 +127,7 @@ $vehicules = $stmt->fetchAll(PDO::FETCH_ASSOC);
      <!-- PARTIE GAUCHE DE LA PAGE-->      
     <section id="about" class="mt-5">
       <div class="container-fluid">
-         <div class="row listeV">
+         <div class="row">
             <div class="col-xl-4 col-md-10 col-sm-12 offset-xl-1 left">
                <div class="sticky-element">
                   <h2>Catalogue</h2>
@@ -141,18 +142,18 @@ $vehicules = $stmt->fetchAll(PDO::FETCH_ASSOC);
                   <?php foreach ($vehicules as $vehicule) : ?>
                   <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12 col-flex">
                   
-                    <div class="card text-center h-100 border border-light border border-2" style="">
-                    <img src="images/<?= $vehicule['images'] ?>" class="img-fluid" alt="images du vehicule">
+                    <div class="card text-center h-100" style="">
+                    <img src="images/<?= $vehicule['images'] ?>" class="img-fluid" alt="...">
                       <div class="card-body">
                         <h5 class="card-title"><?= $vehicule['title']; ?></h5>
                           <p class="card-text"><?= $vehicule['datemisecirculation']; ?></p>
-                          <p class="card-text"><?="Kilométres: " . $vehicule['kilometre']." Km"; ?></p>
+                          <p class="card-text"><?= $vehicule['kilometre']." Km"; ?></p>
                           <p class="card-text"><?="Prix: ". $vehicule['prix']." €"; ?></p>
                          <a href="annonce.php?id=<?= $vehicule["id"] ?>" class="btn btn-primary">Voir l'annonce</a>
                       </div>
                     </div>
                   </div>
-                  <!-- Fin de la carte-->
+                  <!-- Fin de la card-->
 
                   <?php endforeach ; ?>
                 </div>

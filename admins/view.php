@@ -1,5 +1,8 @@
 
 <?php
+
+
+
     
     include_once __DIR__ . "/inc/database.php";
     
@@ -30,6 +33,11 @@ function checkInput($data)
     $data = htmlspecialchars($data);
     return $data;
 }
+
+session_name("login");
+    session_start();
+
+if(!empty($_SESSION) && isset($_SESSION["login"])) {
 
 ?>
 
@@ -102,7 +110,7 @@ function checkInput($data)
                                     </div>
                                     <div class="col-sm-6 site bordure">
                                         <img class="img-fluid mt-4" src="<?= '../images/' . $item['images']; ?>" alt="image du vehicule" >
-                                        <p class="price mt-2"><?= number_format((float) $item['prix'],2,'.',''). ' €'; ?></p> 
+                                        <p class="priceview mt-2"><?= number_format((float) $item['prix'],2,'.',''). ' €'; ?></p> 
                                         <h5 class="card-title mt-5"><?= $item['title']; ?></h5>
                                     </div>
                                 </div>
@@ -121,6 +129,10 @@ function checkInput($data)
     <?php
       include_once __DIR__ . "../../footer.php";
     ?>
+     <!-- SI ON EST PAS CONNECTER ON AFFICHE LA PAGE D'ACCUEIL -->
+     <?php } else {
+                      header("location: ./");
+        } ?>
 
       </body>
   </html>  

@@ -60,6 +60,13 @@
     margin-top: 8px;
   }
 
+  .services{
+    padding-top: 2rem;
+  }
+
+  .sticky-element{
+    padding-top: 1rem;
+  }
   .sticky-element h2{
     color: brown;
     font-size: 48px;
@@ -72,6 +79,7 @@
     font-weight: 800;
   }
 
+  
   .card-title{
     color: brown !important;
     font-size: 24px;
@@ -92,39 +100,15 @@
       display: inline;
   }
 
-  #about {
-    padding-top: 80px;
-
-  }
-
-
-
-  .about-card {
-    border: 1px solid #F1F1F1;
-    border-radius: 10px;
-    box-shadow: 0px 0px 30px 0px rgb(0 0 0 / 5%);
-    padding: 20px 10px;
-    margin-bottom: 50px;
-    flex: 1;
-}
  
-.about-card p {
+.card p {
     font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    color: #4e4e4e;
-}
- 
-.about-card img {
-    height: auto;
-    width: auto;
+    font-size: 20px;
+    color: #2f2f2f;
 }
 
-.text-heading{
-    color: brown !important;
-    font-size: 24px;
-    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; 
-    margin-top: 1rem;
-    margin-bottom: 1.2rem; 
+.listeV{
+  padding-top: 5.2rem;
 }
 
 /*-- CSS PAGE ANNONCE  --*/
@@ -196,13 +180,13 @@
 
 
 /*======== BANDEAU PRIX DE LA PAGE VIEW=============*/
-.price {
+.priceview {
   background: #5cb85c;
   box-shadow: 0 1px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 1px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 0 1px rgba(0, 0, 0, 0.2);
   color: #fff;
-  text-shadow: 2px 2px #333;
+  text-shadow: 1px 1px #333;
   position: absolute;
   right: -8px;
   top: 20px;
@@ -210,7 +194,7 @@
   font-size: 20px;
   border-radius: 3px;
 }
-.price::before {
+.priceview::before {
   border: 4px solid transparent;
   border-bottom: 4px solid #4a934a;
   border-left: 4px solid #4a934a;

@@ -1,4 +1,11 @@
 <?php
+//declare(strict_types= 1);
+
+
+session_name ("login");
+session_start();
+
+
 
 include_once __DIR__ . "/inc/database.php";
 
@@ -9,6 +16,39 @@ try{
 }catch(PDOException $pe){
     echo $pe->getMessage();
 }
+include_once __DIR__ . "/functions.php";
+
+
+
+$erreur = false;
+
+
+$login = " ";
+
+if(isset($_POST) && !empty($_POST)) {
+
+    $login = validateForm($_POST["login"]);
+    $password = trim($_POST["password"]) ;
+
+    if(strpos($login, "&gt;") > 0) {
+        header("location: honney.php");
+    }
+
+    $admin = signIn($login, $password);
+
+    if (!empty($admin)) {
+        if ($admin["id"] > 0) {
+            $_SESSION["login"] = $admin["login"];
+            header("Location: index.php");
+        } else {
+            $erreur = true;
+        }
+    } else {
+        $erreur = true;
+    }
+
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +61,7 @@ try{
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
   <link rel="stylesheet" href="../css/style.css">
-  <title>Prestance Autos annonces</title>
+  <title>Prestance Autos connexion administrateur</title>
   </head>
     <body>
     <nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top">
@@ -58,12 +98,12 @@ try{
                     <div class="row">
                         <div class="col-md-7 pe-0">
                             <div class="form-left h-100 py-5 px-5">
-                                <form action="" class="row g-4">
+                                <form action="" id="form" method="post" class="row g-4">
                                         <div class="col-12">
                                             <label>Login<span class="text-danger">*</span></label>
                                             <div class="input-group">
                                                 <div class="input-group-text"><i class="fas fa-user-shield"></i></div>
-                                                <input type="text" class="form-control" placeholder="Entrer votre login">
+                                                <input type="text" id="login" name="login" class="form-control" placeholder="Login">
                                             </div>
                                         </div>
 
@@ -71,7 +111,7 @@ try{
                                             <label>Mot de passe<span class="text-danger">*</span></label>
                                             <div class="input-group">
                                                 <div class="input-group-text"><i class="fas fa-unlock-alt"></i></div>
-                                                <input type="text" class="form-control" placeholder="Entrer votre mot de passe">
+                                                <input type="password" id="password" name="password" class="form-control" placeholder="****">
                                             </div>
                                         </div>
 
@@ -79,7 +119,17 @@ try{
                                         <div class="col-12">
                                             <button type="submit" class="btn btn-primary px-4 float-end mt-4">Soumettre</button>
                                         </div>
+                                        <?php if($erreur){ ?>
+                                            <div class="alert alert-danger">
+                                                <h6 class="alert-title">Erreur</h6>
+                                                <p>Impossible de vous connecter</p>
+                                                <hr>
+                                                <pre>Veuillez vérifier vos saisies</pre>
+                                            </div>
+
+                                        <?php } ?>
                                 </form>
+                                
                             </div>
                         </div>
                         <div class="col-md-5 ps-0 d-none d-md-block">

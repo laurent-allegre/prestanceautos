@@ -17,8 +17,16 @@ function validateForm (string $input): string {
 
 function signIn(string $login, string $password): array {
 
+    include_once __DIR__ . "/admins/inc/database.php";
+
+    try{
+        $db = new pdo("mysql: host=" . Database::HOST . "; port=" . Database::PORT . "; dbname=" . Database::DBNAME . "; charset=utf8;",Database::DBUSER, Database::DBPASS , array(
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        ));
+    }catch(PDOException $pe){
+        echo $pe->getMessage();
+    }
     
-    $db = Database::connect();
     $sql = "SELECT * FROM admins WHERE login = :login ;";
     $req = $db -> prepare ($sql);
     $req-> bindParam(':login', $login, PDO::PARAM_STR);

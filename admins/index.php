@@ -1,5 +1,11 @@
 <?php
 
+
+ session_name("login");
+    session_start();
+
+if(!empty($_SESSION) && isset($_SESSION["login"])) {
+
 include_once __DIR__ . "/inc/database.php";
 
 try{
@@ -51,8 +57,8 @@ try{
       <!--==================== LISTE DES VEHICULES=======================-->
             <div class="container admin">
                 <div class="row table-responsive">
-                    <h2><strong>Liste des Véhicules :</strong><a href="insert.php" type="button"class="btn btn-success btn-sm ms-3"><span class="fas fa-plus"></span> Ajouter</a><a href="../index.php" type="button"class="btn btn-primary btn-sm ms-1"><span class="fas fa-arrow-left"></span> retour </a></h2>
-                
+                    <h2><strong>Liste des Véhicules :</strong><a href="insert.php" type="button"class="btn btn-success btn-sm ms-3"><span class="fas fa-plus"></span> Ajouter</a><a href="../index.php" type="button"class="btn btn-primary btn-sm ms-1"><span class="fas fa-arrow-left"></span> retour </a><a href="logout.php" type="button"class="btn btn-danger btn-sm ms-1"><span class="fas fa-exclamation-triangle"></span> Déconnexion </a></h2>
+                    
                     <table class="table table-striped table-bordered">
                         <thead>
                             <tr>
@@ -101,6 +107,11 @@ try{
     <?php
       include_once __DIR__ . "../../footer.php";
     ?>
+
+     <!-- SI ON EST PAS CONNECTER ON AFFICHE LA PAGE D'ACCUEIL -->
+     <?php } else {
+                      header("location: ./");
+        } ?>
 
       </body>
   </html>      

@@ -1,5 +1,8 @@
 
 <?php
+
+
+
       include_once __DIR__ . "/inc/database.php";
     
       try{
@@ -166,6 +169,11 @@
     $data = htmlspecialchars($data);
     return $data;
     }
+
+    session_name("login");
+    session_start();
+
+if(!empty($_SESSION) && isset($_SESSION["login"])) {
 ?>
 
 <!DOCTYPE html>
@@ -334,6 +342,10 @@
                 <?php
       include_once __DIR__ . "../../footer.php";
     ?>
+     <!-- SI ON EST PAS CONNECTER ON AFFICHE LA PAGE D'ACCUEIL -->
+     <?php } else {
+                      header("location: ./");
+        } ?>
 
       </body>
   </html>         
