@@ -37,7 +37,7 @@
          $carosserie       = CheckInput($_POST['carosserie']);
          $energie       = CheckInput($_POST['energie']);
      
-         $image       = CheckInput($_FILES['images']['name']) ;
+         $images       = CheckInput($_FILES['images']['name']) ;
          $imagePath   = '../images/' . basename($images);
          $imageExtend  = pathinfo($imagePath, PATHINFO_EXTENSION);
          $isSuccess   = true;
@@ -61,6 +61,56 @@
          if(empty($modele))
          {
             $modeleError = "Ce champ ne peut pas être vide";
+            $isSuccess = false;
+         }
+         if(empty($btv))
+         {
+            $btvError = "Ce champ ne peut pas être vide";
+            $isSuccess = false;
+         }
+         if(empty($kilometre))
+         {
+            $kilometreError = "Ce champ ne peut pas être vide";
+            $isSuccess = false;
+         }
+         if(empty($datemisecirculation))
+         {
+            $datemisecirculationError = "Ce champ ne peut pas être vide";
+            $isSuccess = false;
+         }
+         if(empty($cylindree))
+         {
+            $cylindreeError = "Ce champ ne peut pas être vide";
+            $isSuccess = false;
+         }
+         if(empty($nbcylindre))
+         {
+            $nbcylindreError = "Ce champ ne peut pas être vide";
+            $isSuccess = false;
+         }
+         if(empty($pfiscale))
+         {
+            $pfiscaleError = "Ce champ ne peut pas être vide";
+            $isSuccess = false;
+         }
+         if(empty($pdin))
+         {
+            $pdinError = "Ce champ ne peut pas être vide";
+            $isSuccess = false;
+         }
+         if(empty($temission))
+         {
+            $temissionError = "Ce champ ne peut pas être vide";
+            $isSuccess = false;
+         }
+         if(empty($cexterieur))
+         {
+            $cexterieurError = "Ce champ ne peut pas être vide";
+            $isSuccess = false;
+         }
+         if(empty($cinterieur))
+         {
+            $cinterieur = "Ce champ ne peut pas être vide";
             $isSuccess = false;
          }
          
@@ -91,7 +141,7 @@
              {
                  if(!move_uploaded_file($_FILES['images']['tmp_name'], $imagePath))
                  {
-                    $imageError = "Il y a eu une erreur lors de l'upload ";
+                    $imagesError = "Il y a eu une erreur lors de l'upload ";
                     $isUploadSuccess = false;
                  }
              }
@@ -102,7 +152,7 @@
                 $statement = $db->prepare("INSERT INTO vehicules (title,prix,marque, modele, btv, kilometre, datemisecirculation, cylindree, nbcylindre,
                 pfiscale, pdin, temission, cexterieur, cinterieur, nsieges, nportes, transmission, carosserie, energie, images)
                                           values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-                $statement->execute(array($title,$prix,$price, $marque,$modele,$btv,$kilometre,$datemisecirculation,$cylindree,$nbcylindre,$pfiscale,
+                $statement->execute(array($title,$prix, $marque,$modele,$btv,$kilometre,$datemisecirculation,$cylindree,$nbcylindre,$pfiscale,
                                          $pdin,$temission,$cexterieur,$cinterieur,$nsieges,$nportes,$transmission,$carosserie,$energie,  $images));
                 
                 header('Location: index.php');
@@ -263,7 +313,7 @@
                             </div>
                             
                             <div class="form-group">
-                                <label for="image">Sélectionner une image:</label>
+                                <label for="images">Sélectionner une image:</label>
                                 <input type="file" class="form-control" id="images" name="images">
                                 <span class="help-inline"><?= $imagesError; ?></span>
                             </div>
