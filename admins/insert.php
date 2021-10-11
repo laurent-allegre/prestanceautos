@@ -339,7 +339,7 @@ if(!empty($_SESSION) && isset($_SESSION["login"])) {
             
 
 
-                <?php
+    <?php
       include_once __DIR__ . "../../footer.php";
     ?>
      <!-- SI ON EST PAS CONNECTER ON AFFICHE LA PAGE D'ACCUEIL -->
