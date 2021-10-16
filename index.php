@@ -43,24 +43,12 @@ $vehicules = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img src="images/carousel1.jpg" class="d-block w-100" alt="image 1 du carousel">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
-              <p>Some representative placeholder content for the first slide.</p>
-            </div>
           </div>
           <div class="carousel-item">
             <img src="images/carousel2.jpg" class="d-block w-100" alt="image 2 du carousel">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Second slide label</h5>
-              <p>Some representative placeholder content for the second slide.</p>
-            </div>
           </div>
           <div class="carousel-item">
             <img src="images/carousel3.jpg" class="d-block w-100" alt="image 3 du carousel">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>Some representative placeholder content for the third slide.</p>
-            </div>
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
@@ -148,7 +136,9 @@ $vehicules = $stmt->fetchAll(PDO::FETCH_ASSOC);
                           <p class="card-text"><?= $vehicule['datemisecirculation']; ?></p>
                           <p class="card-text"><?="Kilométres: " . $vehicule['kilometre']." Km"; ?></p>
                           <p class="card-text"><?="Prix: ". $vehicule['prix']." €"; ?></p>
-                         <a href="annonce.php?id=<?= $vehicule["id"] ?>" class="btn btn-primary">Voir l'annonce</a>
+                          <div class="button">
+                              <a href="annonce.php?id=<?= $vehicule["id"] ?>">Voir l'annonce</a>
+                          </div>
                       </div>
                     </div>
                   </div>

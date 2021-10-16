@@ -243,7 +243,7 @@ if (!empty($_SESSION) && isset($_SESSION["login"])) {
         <div class="container admin">
                     <div class="row table-responsive">
                      <h1><span class="fas fa-car "></span> Modifier un Véhicule <span class="fas fa-car"></span></h1><br>
-                         <div class="col-5 col-sm-5"> <!--====== Debut Première Colonne ========-->
+                         <div class="col-7 col-sm-7"> <!--====== Debut Première Colonne ========-->
                     
                             <form  class="form" role="form" action="<?= 'update.php?id=' . $id; ?>" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
@@ -361,7 +361,7 @@ if (!empty($_SESSION) && isset($_SESSION["login"])) {
                             </div>
                         </form>    
                     </div>
-                        <div class="col-7 site bordure">
+                        <div class="col-5 site bordure">
                             <img class="img-fluid mt-2" src="<?= '../images/' . $images; ?>" alt="sans" >
                                 <p class="price"></p> 
                                 <h5 class="card-title"><?= $title; ?></h5>

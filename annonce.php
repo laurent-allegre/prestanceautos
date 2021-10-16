@@ -199,8 +199,8 @@ if (isset($_GET["id"]) && !empty($_GET["id"])) {
               </table>
             </div>
           </div>
-          <div class="col text-center mt-3">
-            <a class="btn btn-info btn-sm" href="index.php#about">Retour sur la page des vehicules</a>
+          <div class="col text-center mt-3 button">
+            <a href="index.php#about">Retour sur la page des vehicules</a>
           </div>
 
         </div>

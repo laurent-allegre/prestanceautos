@@ -129,7 +129,7 @@ $vehicules = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <div class="container-fluid">
          <div class="row">
             <div class="col-xl-4 col-md-10 col-sm-12 offset-xl-1 left">
-               <div class="sticky-element">
+               <div class="sticky-element ">
                   <h2>Catalogue</h2>
                   <h3>De nos vehicules disponibles.</h3>
                   <img src="images/audi.png" alt="" class="img-fluid">
@@ -142,15 +142,17 @@ $vehicules = $stmt->fetchAll(PDO::FETCH_ASSOC);
                   <?php foreach ($vehicules as $vehicule) : ?>
                   <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12 col-flex">
                   
-                    <div class="card text-center h-100" style="">
-                    <img src="images/<?= $vehicule['images'] ?>" class="img-fluid" alt="...">
-                      <div class="card-body">
-                        <h5 class="card-title"><?= $vehicule['title']; ?></h5>
-                          <p class="card-text"><?= $vehicule['datemisecirculation']; ?></p>
-                          <p class="card-text"><?= $vehicule['kilometre']." Km"; ?></p>
-                          <p class="card-text"><?="Prix: ". $vehicule['prix']." €"; ?></p>
-                         <a href="annonce.php?id=<?= $vehicule["id"] ?>" class="btn btn-primary">Voir l'annonce</a>
-                      </div>
+                    <div class="card text-center h-100">
+                      <img src="images/<?= $vehicule['images'] ?>" class="img-fluid" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title"><?= $vehicule['title']; ?></h5>
+                            <p class="card-text"><?= $vehicule['datemisecirculation']; ?></p>
+                            <p class="card-text"><?= $vehicule['kilometre']." Km"; ?></p>
+                            <p class="card-text"><?="Prix: ". $vehicule['prix']." €"; ?></p>
+                            <div class="button">
+                              <a href="annonce.php?id=<?= $vehicule["id"] ?>">Voir l'annonce</a>
+                            </div>
+                        </div>
                     </div>
                   </div>
                   <!-- Fin de la card-->
