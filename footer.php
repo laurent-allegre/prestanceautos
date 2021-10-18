@@ -20,14 +20,11 @@
              </p>
  
            <div class="mt-4">
-             <!-- Facebook -->
-             <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-facebook-f"></i></a>
-             <!-- Dribbble -->
-             <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-dribbble"></i></a>
-             <!-- Twitter -->
-             <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-twitter"></i></a>
-             <!-- Google + -->
-             <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-google-plus-g"></i></a>
+             <!-- linkedin -->
+             <a type="button" href="https://www.linkedin.com/in/laurent-allegre-72225a93/" class="btn btn-floating btn-light btn-lg"><i class="fab fa-linkedin"></i></a>
+             <!-- github -->
+             <a type="button" href="https://github.com/laurent-allegre" class="btn btn-floating btn-light btn-lg"><i class="fab fa-github"></i></a>
+            
              <!-- Linkedin -->
            </div>
          </div>

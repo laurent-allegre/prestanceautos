@@ -126,23 +126,23 @@ $vehicules = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 right">
                <div class="row">
                 <!--============ DEBUT DES CARTES DES VEHICULES ===========-->
-                  <?php foreach ($vehicules as $vehicule) : ?>
-                  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12 col-flex">
+                <?php foreach ($vehicules as $vehicule) : ?>
+                  <div class="card-deck col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12 mx-auto">
                   
-                    <div class="card text-center h-100 border border-light border border-2" style="">
-                    <img src="images/<?= $vehicule['images'] ?>" class="img-fluid" alt="images du vehicule">
-                      <div class="card-body">
-                        <h5 class="card-title"><?= $vehicule['title']; ?></h5>
-                          <p class="card-text"><?= $vehicule['datemisecirculation']; ?></p>
-                          <p class="card-text"><?="Kilométres: " . $vehicule['kilometre']." Km"; ?></p>
-                          <p class="card-text"><?="Prix: ". $vehicule['prix']." €"; ?></p>
-                          <div class="button">
+                    <div class="card text-center   mt-2">
+                      <img src="images/<?= $vehicule['images'] ?>" class="img-fluid" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title"><?= $vehicule['title']; ?></h5>
+                            <p class="card-text"><?= $vehicule['datemisecirculation']; ?></p>
+                            <p class="card-text"><?= $vehicule['kilometre']." Km"; ?></p>
+                            <p class="card-text"><?="Prix: ". $vehicule['prix']." €"; ?></p>
+                            <div class="button d-flex justify-content-center ">
                               <a href="annonce.php?id=<?= $vehicule["id"] ?>">Voir l'annonce</a>
-                          </div>
-                      </div>
+                            </div>
+                        </div>
                     </div>
                   </div>
-                  <!-- Fin de la carte-->
+                  <!-- Fin de la card-->
 
                   <?php endforeach ; ?>
                 </div>
