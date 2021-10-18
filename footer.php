@@ -1,6 +1,6 @@
 
 <!-- FOOTER -->
-<div class="container-fluid my-5">
+<div class="footer container-fluid my-5">
 
    <footer class="text-white text-center text-lg-start bg-dark ">
      <!-- Grid container -->

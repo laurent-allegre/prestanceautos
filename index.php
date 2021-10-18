@@ -119,7 +119,7 @@ $vehicules = $stmt->fetchAll(PDO::FETCH_ASSOC);
                <div class="sticky-element">
                   <h2>Catalogue</h2>
                   <h3>De nos vehicules disponibles.</h3>
-                  <img src="images/audi.png" alt="" class="img-fluid">
+                  <img src="images/audi.png" alt="image audi logo" class="img-fluid">
                </div>
             </div>
             
@@ -130,7 +130,7 @@ $vehicules = $stmt->fetchAll(PDO::FETCH_ASSOC);
                   <div class="card-deck col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12 mx-auto">
                   
                     <div class="card text-center   mt-2">
-                      <img src="images/<?= $vehicule['images'] ?>" class="img-fluid" alt="...">
+                      <img src="images/<?= $vehicule['images'] ?>" class="img-fluid" alt="image du véhicule choisis">
                         <div class="card-body">
                           <h5 class="card-title"><?= $vehicule['title']; ?></h5>
                             <p class="card-text"><?= $vehicule['datemisecirculation']; ?></p>
