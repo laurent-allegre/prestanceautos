@@ -52,7 +52,7 @@ if (isset($_GET["id"]) && !empty($_GET["id"])) {
           </li>
           <li class="nav-item">
             <a class="" href="./admins/login.php">
-              <img src="images/logoprestance.png" alt="Logo prestance autos" width="150" height="75">
+              <img src="images/logoprestance.webp" alt="Logo prestance autos" width="150" height="75">
             </a>
           </li>
           <li class="nav-item">

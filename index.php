@@ -42,13 +42,13 @@ $vehicules = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="images/carousel1.jpg" class="d-block w-100" alt="image 1 du carousel">
+            <img src="images/carousel1.webp" class="d-block w-100" alt="image 1 du carousel">
           </div>
           <div class="carousel-item">
-            <img src="images/carousel2.jpg" class="d-block w-100" alt="image 2 du carousel">
+            <img src="images/carousel2.webp" class="d-block w-100" alt="image 2 du carousel">
           </div>
           <div class="carousel-item">
-            <img src="images/carousel3.jpg" class="d-block w-100" alt="image 3 du carousel">
+            <img src="images/carousel3.webp" class="d-block w-100" alt="image 3 du carousel">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
@@ -82,10 +82,10 @@ $vehicules = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </section>
     </div>  
     <!--FIN--SECTION---ABOUT-->
-    <div class="container mb-4">
-      <div class="row justify-content-center services">
+    <div class="container-fluid mb-4 condition">
+      <div class="row justify-content-center py-5 px-5">
 
-        <div class="card" style="width: 22rem;">
+        <div class="card mx-1" style="width: 23rem;">
           <i class="far fa-4x fa-handshake mx-auto tm-section-icon"></i>
           <div class="card-body">
             <h5 class="card-title">REPRISE</h5>
@@ -93,7 +93,7 @@ $vehicules = $stmt->fetchAll(PDO::FETCH_ASSOC);
           </div>
         </div>
         
-        <div class="card" style="width: 22rem;">
+        <div class="card mx-1" style="width: 23rem;">
           <i class="fas fa-4x fa-file-signature mx-auto tm-section-icon"></i>
           <div class="card-body">
             <h5 class="card-title">GARANTIE</h5>
@@ -101,7 +101,7 @@ $vehicules = $stmt->fetchAll(PDO::FETCH_ASSOC);
           </div>
         </div>
 
-        <div class="card" style="width: 22rem;">
+        <div class="card mx-1" style="width: 23rem;">
           <i class="fab fa-4x fa-cc-mastercard mx-auto tm-section-icon"></i>
           <div class="card-body">
             <h5 class="card-title">FINANCEMENT</h5>
@@ -119,7 +119,7 @@ $vehicules = $stmt->fetchAll(PDO::FETCH_ASSOC);
                <div class="sticky-element">
                   <h2>Catalogue</h2>
                   <h3>De nos vehicules disponibles.</h3>
-                  <img src="images/audi.png" alt="image audi logo" class="img-fluid">
+                  <img src="images/audi.webp" alt="image audi logo" class="img-fluid">
                </div>
             </div>
             
@@ -135,7 +135,7 @@ $vehicules = $stmt->fetchAll(PDO::FETCH_ASSOC);
                           <h5 class="card-title"><?= $vehicule['title']; ?></h5>
                             <p class="card-text"><?= $vehicule['datemisecirculation']; ?></p>
                             <p class="card-text"><?= $vehicule['kilometre']." Km"; ?></p>
-                            <p class="card-text"><?="Prix: ". $vehicule['prix']." €"; ?></p>
+                            <p class="card-text"><?="Prix:<b> ". $vehicule['prix']." €</b>"; ?></p>
                             <div class="button d-flex justify-content-center ">
                               <a href="annonce.php?id=<?= $vehicule["id"] ?>">Voir l'annonce</a>
                             </div>

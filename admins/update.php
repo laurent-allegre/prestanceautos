@@ -228,7 +228,7 @@ if (!empty($_SESSION) && isset($_SESSION["login"])) {
                         </li>
                         <li class="nav-item">
                             <a class="" href="#">
-                                <img src="../images/logoprestance.png" alt="Logo prestance autos" width="150" height="75">
+                                <img src="../images/logoprestance.webp" alt="Logo prestance autos" width="150" height="75">
                             </a>
                         </li>
                         <li class="nav-item">

@@ -77,7 +77,7 @@ if(isset($_POST) && !empty($_POST)) {
               </li>
               <li class="nav-item">
                 <a class="" href="#">
-                  <img src="../images/logoprestance.png" alt="Logo prestance autos" width="150" height="75">
+                  <img src="../images/logoprestance.webp" alt="Logo prestance autos" width="150" height="75">
                 </a>
               </li>
               <li class="nav-item">
@@ -135,7 +135,7 @@ if(isset($_POST) && !empty($_POST)) {
                         <div class="col-md-5 ps-0 d-none d-md-block">
                             <div class="form-right h-100 text-center pt-5 bg-primary p-2 text-dark bg-opacity-25">
                             <h5 class="text-uppercase">prestance autos</h5>
-                                <img src="../images/mercedes-logo.png" alt="" class="img-fluid">
+                                <img src="../images/mercedes-logo.webp" alt="" class="img-fluid">
                             </div>
                         </div>
                     </div>
