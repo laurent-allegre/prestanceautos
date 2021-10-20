@@ -1,45 +1,40 @@
-<?php 
- include_once __DIR__ . "/inc/database.php";
 
- try {
-     $db = new pdo("mysql: host=" . Database::HOST . "; port=" . Database::PORT . "; dbname=" . Database::DBNAME . "; charset=utf8;", Database::DBUSER, Database::DBPASS, array(
-         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-     ));
- } catch (PDOException $pe) {
-     echo $pe->getMessage();
- }
- 
- 
- 
-if(!empty($_GET['id'])) {
-$id = checkInput($_GET['id']);
-}
- 
- 
-if(!empty($_POST)) {
-	$errors = array();
-	$id = checkInput($_POST['id']);
-	$reponse = $db->prepare('SELECT images FROM vehicules WHERE id = ?');
-	$reponse->execute(array($id));
-  $donnees = $reponse->fetch();
-  /* ON EFFACE L'IMAGE STOCKé DANS LE DOSSIER IMAGES */
-  unlink(__DIR__."/../images/". $donnees[0]);
+<?php
+     include_once __DIR__ . "/inc/database.php";
+
+     try {
+         $db = new pdo("mysql: host=" . Database::HOST . "; port=" . Database::PORT . "; dbname=" . Database::DBNAME . "; charset=utf8;", Database::DBUSER, Database::DBPASS, array(
+             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+         ));
+     } catch (PDOException $pe) {
+         echo $pe->getMessage();
+     }
+
+     function checkInput($data)
+     {
+     $data = trim($data);
+     $data = stripslashes($data);
+     $data = htmlspecialchars($data);
+     return $data;
+     }
+
+
+     if(!empty($_GET['id']))
+     {
+         $id = CheckInput($_GET['id']);
+     }
+
+     if(!empty($_POST))
+     {
+        $id = CheckInput($_POST['id']);
+        $statement = $db->prepare("DELETE FROM vehicules WHERE id = ?");
+        $statement->execute(array($id));
+        header("Location: index.php");
+     }
+
+     
+
    
-	$statement = $db->prepare("DELETE FROM vehicules WHERE id = ?");
-	$statement->execute(array($id));
-	echo 'Votre photo à bien été supprimée.';
-  header("Location: index.php");
-	
-}
- 
- 
-function checkInput($data) {
-	$data = trim($data);
-	$data = stripslashes($data);
-	$data = htmlspecialchars($data);
-	return $data;
-}
- 
 ?>
 <?php
 session_name("login");
@@ -47,8 +42,8 @@ session_start();
 
 if(!empty($_SESSION) && isset($_SESSION["login"])) {
 ?>
- 
- <!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="fr">
   <head>
   <meta charset="UTF-8">

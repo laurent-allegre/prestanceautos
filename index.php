@@ -85,7 +85,7 @@ $vehicules = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="container-fluid mb-4 condition">
       <div class="row justify-content-center py-5 px-5">
 
-        <div class="card mx-1" style="width: 23rem;">
+        <div class="card mx-1" style="width: 22rem;">
           <i class="far fa-4x fa-handshake mx-auto tm-section-icon"></i>
           <div class="card-body">
             <h5 class="card-title">REPRISE</h5>
@@ -93,7 +93,7 @@ $vehicules = $stmt->fetchAll(PDO::FETCH_ASSOC);
           </div>
         </div>
         
-        <div class="card mx-1" style="width: 23rem;">
+        <div class="card mx-1" style="width: 22rem;">
           <i class="fas fa-4x fa-file-signature mx-auto tm-section-icon"></i>
           <div class="card-body">
             <h5 class="card-title">GARANTIE</h5>
@@ -101,7 +101,7 @@ $vehicules = $stmt->fetchAll(PDO::FETCH_ASSOC);
           </div>
         </div>
 
-        <div class="card mx-1" style="width: 23rem;">
+        <div class="card mx-1" style="width: 22rem;">
           <i class="fab fa-4x fa-cc-mastercard mx-auto tm-section-icon"></i>
           <div class="card-body">
             <h5 class="card-title">FINANCEMENT</h5>

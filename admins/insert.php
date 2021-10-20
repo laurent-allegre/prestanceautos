@@ -125,9 +125,9 @@
          else
          {
              $isUploadSuccess = true;
-             if($imageExtend != 'jpg' && $imageExtend != 'png' && $imageExtend != 'jpeg' && $imageExtend != 'gif')
+             if($imageExtend != 'jpg' && $imageExtend != 'png' && $imageExtend != 'jpeg' && $imageExtend != 'gif' && $imageExtend != 'webp')
              {
-                 $imagesError = "Les fichiers autorisés sont : .jpg, .png, .jpeg, .gif";
+                 $imagesError = "Les fichiers autorisés sont : .jpg, .png, .jpeg, .gif .webp";
                  $isUploadSuccess = false;
              }
              if(file_exists($imagePath))
@@ -135,9 +135,9 @@
                 $imagesError = "le fichier existe déjà";
                 $isUploadSuccess = false;
              }
-             if($_FILES['images']['size'] > 500000)
+             if($_FILES['images']['size'] > 900000)
              {
-                $imageError = "le fichier ne doit pas dépasser les 500KB";
+                $imageError = "le fichier ne doit pas dépasser les 900KB";
                 $isUploadSuccess = false;
              }
              if($isUploadSuccess)
